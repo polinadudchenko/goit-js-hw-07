@@ -14,7 +14,7 @@ const images = [
 ];
 
 function createGallery(imgArray, id) {
-  const htmlString = imgArray.reduce((acc, { url, alt }) => acc + `<li class='gallery__item'><img src='${url}' alt='${alt}'/></li>`, ''); 
+  const htmlString = imgArray.reduce((acc, { url, alt }) => acc + `<li class='gallery__item'><img class="gallery__img" src='${url}' alt='${alt}'/></li>`, ''); 
   const element = document.getElementById(id)
   return element.insertAdjacentHTML('afterbegin', htmlString)
 }

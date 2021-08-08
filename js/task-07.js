@@ -3,7 +3,7 @@ const spanEl = document.getElementById('text');
 
 function changeFontSize(event){
     const value = event.currentTarget.value;
-    spanEl.style.fontSize = value + 'px';
+    spanEl.style.fontSize = `${value}px`;
 }
 
 inputEl.addEventListener('input', changeFontSize)

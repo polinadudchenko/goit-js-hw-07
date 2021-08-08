@@ -2,16 +2,11 @@ let currentValue = 0;
 const screenValue = document.getElementById('value');
 
 const increment = () => {
-    currentValue += 1;
-    return screenValue.textContent = currentValue;
+    return screenValue.textContent = currentValue += 1;
 }
 
 const decrement = () => {
-    if (currentValue === 0) {
-        return screenValue.textContent = 0;
-    }
-    currentValue -= 1;
-    screenValue.textContent = currentValue;
+    return screenValue.textContent = currentValue ? currentValue -= 1 : 0;
 }
 
 const btnDecrement = document.querySelector('[data-action="decrement"]')

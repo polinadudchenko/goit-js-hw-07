@@ -1,13 +1,13 @@
 const inputEl = document.getElementById('validation-input');
 function getValueLength(event) {
-    const defaultValue = inputEl.getAttribute('data-length')
+    const defaultValue = Number(inputEl.getAttribute('data-length'));
     const valueLength = event.currentTarget.value.length;
-    if (valueLength > defaultValue) {
-        inputEl.classList.add('invalid')
-        inputEl.classList.remove('valid')
-    } else {
+    if (valueLength === defaultValue) {
         inputEl.classList.add('valid')
-       inputEl.classList.remove('invalid') 
+        inputEl.classList.remove('invalid')
+    } else {
+        inputEl.classList.add('invalid')
+       inputEl.classList.remove('valid') 
     }
 }
 

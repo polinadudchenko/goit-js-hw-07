@@ -5,6 +5,8 @@ const refs = {
     destroyBtn: document.querySelector('[data-action="destroy"]')
 }
 
+let size = 30;
+
 function getAmount() {
     const amount = refs.inputValue.value;
     createBoxes(amount);
@@ -13,7 +15,6 @@ function getAmount() {
 function createBoxes(amount) {
     
     const boxes = [];
-    let size = 30;
     for (let i = 0; i < amount; i++){
         const box = document.createElement('div');
         box.style.width = `${size}px`;
@@ -23,10 +24,12 @@ function createBoxes(amount) {
         size += 10;
     }
     refs.boxesEl.append(...boxes);
+    size = Number(refs.boxesEl.lastElementChild.clientWidth) + 10;
 }
 
 function destroyBoxes() {
     refs.boxesEl.innerHTML = '';
+    size = 30;
 }
 
 refs.createBtn.addEventListener('click', getAmount);

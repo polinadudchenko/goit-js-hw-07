@@ -9,6 +9,7 @@ let size = 30;
 
 function getAmount() {
     const amount = refs.inputValue.value;
+    refs.inputValue.value = '';
     createBoxes(amount);
 }
 
